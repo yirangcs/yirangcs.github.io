@@ -7,7 +7,7 @@ project-folder/
 ├── album_img/
 │   └── IMG_6085.jpg
 ├── img/
-│   └── 디미.png
+│   └── background.png
 │   └── album_file.png
 │   └── beforemusic_bt.png
 │   └── Frame 12.png
@@ -20,19 +20,18 @@ project-folder/
 │   └── pouse.png
 │   └── Ractangle 7.png
 │   └── Ractangle 12.png
-├── mp3/
-│   └── 1.mp3
-│   └── 2.mp3
-│   └── 3.mp3
-│   └── 4.mp3
-│   └── 5.mp3
-│   └── 6.mp3
-│   └── 7.mp3
-│   └── 8.mp3
-│   └── 9.mp3
-│   └── 10.mp3
-│   └── 11.mp3
-│   └── 12.mp3
+│── 1.mp3
+│── 2.mp3
+│── 3.mp3
+│── 4.mp3
+│── 5.mp3
+│── 6.mp3
+│── 7.mp3
+│── 8.mp3
+│── 9.mp3
+│── 10.mp3
+│── 11.mp3
+│── 12.mp3
 ├── font/
 │   └── PixelMplus12-Bold.woff
 │   └── PixelMplus12-Ragular.woff
@@ -140,27 +139,14 @@ body {
 
 }
 
-.albumphoto-container {
-    position: absolute;
-    top: 9%;
-    width: auto;
-    height: 86%;
-    object-fit: cover;
-    z-index: 2;
-    margin: 0;
-    display: flex;
-
-}
-
-
 
 
 .photo-container {
     position: absolute;
     top: 10%;
     right: 30%;
-    width: 49.9%;
-    height: 67%;
+    width: 693px;
+    height: 542px;
     z-index: 1;
     margin: 0;
     display: flex;
