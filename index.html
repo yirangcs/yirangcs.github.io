@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    <title>SPYAR WEB ALBUM ROCKIN' THE WORLD</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS 파일 연결 -->
+</head>
+<body>
+    <!-- 제목 -->
+    <h1 class="title" id="title">ROCKIN' THE WORLD</h1>
+
+   
+
+    <!-- 뮤직 플레이어 -->
+
+    
+    <div class="musicplayer-container">
+        <img src="img/musicplayer.png" class="musicplayer" alt="musicplayer">
+        <img src="img/Polygon.png" class="polygon" alt="polygon" style="display:none;">
+        <img src="img/nextmusic_bt.png" class="n_bt" alt="next button" style="display:none;">
+        <img src="img/beforemusic_bt.png" class="b_bt" alt="previous button" style="display:none;">
+
+        <!-- 오프닝 문구 -->
+        <div class="opening">PLEASE PUSH PLAY BUTTON</div> 
+
+        <!-- Glitch 텍스트 -->
+        <div class="glitch-container">
+            <div class="glitch-text">
+                <div class="glitch-font1">Rockin’ The World</div>
+                <div class="glitch-font2">ジャパニケーション</div>
+                <div class="glitch-font3">サムライハート (Some Like It Hot!!)</div>
+                <div class="glitch-font4">BEAUTIFUL DAYS</div>
+                <div class="glitch-font5">STRONG</div>
+                <div class="glitch-font6">LIAR</div>
+                <div class="glitch-font7">Stay Together</div>
+                <div class="glitch-font8">BEAUTIFUL</div>
+                <div class="glitch-font9">I miss you</div>
+                <div class="glitch-font10">Last Moment</div>
+                <div class="glitch-font11">SINGING (album mix)</div>
+                <div class="glitch-font12">My Friend</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 추가 이미지 요소 -->
+    <img src="img/디미.png" class="background-img" alt="background-img">
+    <img src="img/Rectangle 7.png" class="Rectangle" alt="Rectangle">
+    <img src="img/music_file.png" class="music_file" alt="music_file">
+    <img src="img/album_file.png" class="album_file" alt="album_file">
+    <img src="img/live_file.png" class="live_file" alt="live_file">
+
+    <div class="liveplayer_container">
+       <img src="img/Frame 12.png" class="liveplayer" alt="liveplayer">
+    
+       
+
+       <div class="glitch-container2">
+        <div class="glitch-text2">
+            <div class="glitch-font2-1"> <a href="https://youtu.be/iJWadG22ZHE?si=U5swLkuPEF3pBkAs">Rockin’ The World</a></div>
+            <div class="glitch-font2-2"><a href="https://youtu.be/zbONNSD1nRI?si=QZ9O0GPhYE71yi6j">ジャパニケーション</a></div>
+            <div class="glitch-font2-3"><a href="https://youtu.be/BM_m70a-uv0?si=UmAHRlCYxf44lpPx">サムライハート (Some Like It Hot!!)</a></div>
+            <div class="glitch-font2-4"><a href="https://youtu.be/sJOWYSlqKxw?si=VSIlIIJMl_Z-6Qzv">BEAUTIFUL DAYS</a></div>
+            <div class="glitch-font2-5"><a href="https://youtu.be/PFvtPtzv0D8?si=TL_-boSQ6SHnsZN8">STRONG</a></div>
+            <div class="glitch-font2-6"><a href="https://youtu.be/Tn9pmEeCUEE?si=0V3gSu2EHjV5SW81">LIAR</a></div>
+            <div class="glitch-font2-7"><a href="https://youtu.be/cLvBORdywF0?si=FST8Yh8ELhtrRw4S">Stay Together</a></div>
+            <div class="glitch-font2-8"><a href="https://youtu.be/gBZVVX9z5Ao?si=3bneNfWn2mYZDZ4z">BEAUTIFUL</a></div>
+            <div class="glitch-font2-9"><a href="https://youtu.be/CfXkd115yNQ?si=NlyGVF1RT9a5J-Vn">I miss you</a></div>
+            <div class="glitch-font2-10"><a href="https://youtu.be/zeGOoCsPmN4?si=MJZm4skrRTv_LoX9">Last Moment</a></div>
+            <div class="glitch-font2-11"><a href="https://youtu.be/lAKP3UZci40?si=F4UIV7jB1efvSqjk">SINGING (album mix)</a></div>
+            <div class="glitch-font2-12"><a href="https://youtu.be/RAja8GTdZbQ?si=hgbKx4xHtl848nLB">My Friend</a></div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div class="photo-container">
+        <img src="img/photo.png" class="photo" alt="photo" style="display:none;">
+        
+        <div class="albumphoto-container">
+            <img src="album_img/IMG_6085.JPG" class="albumphoto" alt="albumphoto">
+        </div>
+    </div>
+    
+
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 주요 DOM 요소 선택
+            const musicFile = document.querySelector('.music_file');
+            const musicPlayer = document.querySelector('.musicplayer');
+            const polygon = document.querySelector('.polygon');
+            const nextButton = document.querySelector('.n_bt');
+            const backButton = document.querySelector('.b_bt');
+            const openPopup = document.querySelector('.opening');
+            const albumFile = document.querySelector('.album_file');
+            const photoPopup = document.querySelector('.photo');
+            const glitchFonts = document.querySelectorAll('.glitch-text div');
+
+            // 오디오 플레이어 생성
+            const audioPlayer = document.createElement('audio');
+            document.body.appendChild(audioPlayer);
+
+            // 재생 목록 및 상태 관리
+            const playlist = [
+                "mp3/1.mp3", "mp3/2.mp3", "mp3/3.mp3", "mp3/4.mp3",
+                "mp3/5.mp3", "mp3/6.mp3", "mp3/7.mp3", "mp3/8.mp3",
+                "mp3/9.mp3", "mp3/10.mp3", "mp3/11.mp3", "mp3/12.mp3"
+            ];
+            let currentTrack = 0;
+            let isPlaying = false;
+            let pausedAt = 0;
+
+            // 초기화 함수
+            function initializePlayer() {
+                musicPlayer.style.display = 'none';
+                polygon.style.display = 'none';
+                nextButton.style.display = 'none';
+                backButton.style.display = 'none';
+                openPopup.style.display = 'none';
+                photoPopup.style.display = 'none';
+                glitchFonts.forEach(font => font.style.display = 'none');
+            }
+
+            // 트랙 재생
+            function playTrack(index) {
+                if (index >= 0 && index < playlist.length) {
+                    audioPlayer.src = playlist[index];
+                    audioPlayer.currentTime = pausedAt;
+                    audioPlayer.play();
+                    isPlaying = true;
+                    polygon.src = "img/pouse.png";
+                    updateGlitchText(index);
+                }
+            }
+
+            // 글씨 업데이트
+            function updateGlitchText(index) {
+                glitchFonts.forEach((font, i) => {
+                    font.style.display = i === index ? 'block' : 'none';
+                });
+            }
+
+            // 재생/일시정지 토글
+            function togglePlayPause() {
+                if (isPlaying) {
+                    pausedAt = audioPlayer.currentTime;
+                    audioPlayer.pause();
+                    isPlaying = false;
+                    polygon.src = "img/Polygon.png";
+                } else {
+                    playTrack(currentTrack);
+                    openPopup.style.display = 'none';
+                }
+            }
+
+            // 다음/이전 트랙 재생
+            function playNextTrack() {
+                if (currentTrack + 1 < playlist.length) {
+                    currentTrack++;
+                    pausedAt = 0;
+                    playTrack(currentTrack);
+                }
+            }
+
+            function playPreviousTrack() {
+                if (currentTrack - 1 >= 0) {
+                    currentTrack--;
+                    pausedAt = 0;
+                    playTrack(currentTrack);
+                }
+            }
+
+            // 음악 파일 클릭 시 초기화
+            musicFile.addEventListener('click', function () {
+                musicPlayer.style.display = 'block';
+                polygon.style.display = 'block';
+                nextButton.style.display = 'block';
+                backButton.style.display = 'block';
+                openPopup.style.display = 'block';
+            });
+
+            // 앨범 클릭 시 사진 팝업 표시
+            albumFile.addEventListener('click', function () {
+                photoPopup.style.display = 'block';
+            });
+
+            // 트랙 종료 시 자동 재생
+            audioPlayer.addEventListener('ended', function () {
+                if (currentTrack + 1 < playlist.length) {
+                    currentTrack++;
+                    pausedAt = 0;
+                    playTrack(currentTrack);
+                } else {
+                    isPlaying = false;
+                    polygon.src = "img/Polygon.png";
+                }
+            });
+
+            // 버튼 클릭 이벤트 등록
+            polygon.addEventListener('click', togglePlayPause);
+            nextButton.addEventListener('click', playNextTrack);
+            backButton.addEventListener('click', playPreviousTrack);
+
+            // 초기화 실행
+            initializePlayer();
+        });
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    // DOM 요소 선택
+    const elements = {
+        albumFile: document.querySelector('.album_file'),
+        photoContainer: document.querySelector('.photo-container'),
+        liveFile: document.querySelector('.live_file'),
+        livePlayerContainer: document.querySelector('.liveplayer_container'),
+        musicPlayerContainer: document.querySelector('.musicplayer-container'),
+    };
+
+    // 초기 상태: 숨기기
+    [elements.photoContainer, elements.livePlayerContainer].forEach(el => {
+        el.style.display = 'none';
+    });
+
+    // 클릭 이벤트 핸들러 추가
+    elements.albumFile?.addEventListener('click', () => {
+        elements.photoContainer.style.display = 'block';
+    });
+
+    elements.liveFile?.addEventListener('click', () => {
+        elements.livePlayerContainer.style.display = 'block';
+    });
+
+    // 공통 드래그 앤 드롭 함수
+    const enableDrag = (element) => {
+        let isDragging = false;
+        let offsetX = 0;
+        let offsetY = 0;
+
+        element.addEventListener('mousedown', (event) => {
+            isDragging = true;
+            offsetX = event.offsetX;
+            offsetY = event.offsetY;
+            element.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (event) => {
+            if (isDragging) {
+                element.style.left = `${event.clientX - offsetX}px`;
+                element.style.top = `${event.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            element.style.cursor = 'grab';
+        });
+    };
+
+    // 드래그 가능한 요소 활성화
+    [elements.photoContainer, elements.musicPlayerContainer, elements.livePlayerContainer].forEach(el => {
+        if (el) enableDrag(el);
+    });
+});
+
+
+
+
+    </script>
+</body>
+</html>
